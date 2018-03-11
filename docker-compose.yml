@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  bottle:
+    build: .
+    ports:
+      - 8000
+    volumes:
+      - ./api:/usr/src/app
+
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./frontend:/usr/share/nginx/html:ro

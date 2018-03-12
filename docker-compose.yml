@@ -6,7 +6,7 @@ services:
     ports:
       - 8000
     volumes:
-      - ./api:/usr/src/app
+      - ./app:/usr/src/app
 
   nginx:
     image: nginx
